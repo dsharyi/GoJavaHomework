@@ -1,4 +1,4 @@
-package com.sharyi_dmytro.practice.module02.task2;
+package com.sharyi_dmytro.practice.module02.task02;
 
 
 public class BankOperation {
