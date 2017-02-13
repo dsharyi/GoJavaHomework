@@ -11,7 +11,7 @@ public class User {
     private static final double PERCENT_OF_COMMISION2 = 0.1;
 
     public static void main(String[] args) {
-        User user = new User("Dima",1500,11,"Luxoft",1000,"USD");
+        User user = new User("Dima", 1500, 11, "Luxoft", 1000, "USD");
         user.paySalary();
         user.withdraw(200);
         user.companyNameLenght();
@@ -79,19 +79,18 @@ public class User {
     }
 
     void paySalary() {
-        int balancePlusSalary = salary + balance;
-        System.out.println("Сумма баланса и заработной платы = " + balancePlusSalary);
+        balance = salary + balance;
+        System.out.println("Сумма баланса после зачисления заработной платы = " + balance);
 
     }
 
     void withdraw(int summ) {
-        double withdraw;
         if (summ < 1000) {
-            withdraw = summ + summ * PERCENT_OF_COMMISION1;
+            balance = (int) (balance - (summ + (summ * PERCENT_OF_COMMISION1)));
         } else {
-            withdraw = summ + summ * PERCENT_OF_COMMISION2;
+            balance = (int) (balance - (summ + (summ * PERCENT_OF_COMMISION2)));
         }
-        System.out.println("Количество снятых денег = " + withdraw);
+        System.out.println("Сумма баланса после снятия денег = " + balance);
     }
 
     void companyNameLenght() {
@@ -99,8 +98,9 @@ public class User {
         System.out.println("Длина имени компании = " + lengthOfNameCompany);
 
     }
-    void monthIncreaser(int addMonth){
-        int monthIncreaser = monthsOfEmployment+addMonth;
-        System.out.println("Количество месяцев рабочей занятости = "+monthIncreaser);
+
+    void monthIncreaser(int addMonth) {
+        monthsOfEmployment = monthsOfEmployment + addMonth;
+        System.out.println("Количество месяцев рабочей занятости после прибавления нескольких месяцев = " + monthsOfEmployment);
     }
 }
