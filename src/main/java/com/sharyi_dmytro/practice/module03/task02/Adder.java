@@ -16,8 +16,10 @@ public class Adder extends Arithmetic {
     /*public static void main(String[] args) {
         Adder math = new Adder();
 
-        System.out.println(math.add(5,6));
-        System.out.println(math.check(7,8));*/
+        System.out.println(math.add(5, 6));
+        System.out.println(math.check(8, 8));
+        */
 
 
-}
+    }
+
