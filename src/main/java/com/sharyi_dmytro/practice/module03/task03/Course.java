@@ -10,6 +10,7 @@ public class Course {
     private String teacherName;
 
 
+
     public Course(Date startDate, String name){}
     public Course(int hoursDuration, String teacherName){}
 

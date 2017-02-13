@@ -10,5 +10,45 @@ public class Student {
 
     public Student(String firstName, String lastName, int group){}
     public Student(String lastName, Course[] coursesTaken){}
+    public Student(){}
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getGroup() {
+        return group;
+    }
+
+    public Course[] getCoursesTaken() {
+        return coursesTaken;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
+    }
+
+    public void setCoursesTaken(Course[] coursesTaken) {
+        this.coursesTaken = coursesTaken;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }
