@@ -5,19 +5,19 @@ public class Bird {
 
     public static void main(String[] args) {
 
-        Bird birdVoody = new Bird("Voody");
-        birdVoody.sing();
-        //Bird bird = new Bird();
-        //bird.sing();
+        //Bird birdVoody = new Bird("Voody");
+        //birdVoody.sing();
+        Bird bird = new Bird();
+        bird.sing();
 
 
     }
 
 
-    private static final String[] SONG = new String[]{"I am walking",
-            "I am flying",
-            "I am singing",
-            "I am Bird"};
+    private static final String SONG = "I am walking \n" +
+            "I am flying \n" +
+            "I am singing \n" +
+            "I am Bird";
 
 
     private String name;
@@ -29,22 +29,15 @@ public class Bird {
     public Bird() {
     }
 
-    @Override
-    public String toString() {
-        return "I am walking \n" +
-                "I am flying \n" +
-                "I am singing \n" +
-                "I am Bird";
-    }
 
 
-    void sing() {
+    public void sing() {
         if (name == null) {
-            System.out.println(toString());
+            System.out.println(SONG);
 
 
         } else {
-            System.out.println("I am " + name + "\n" + toString());
+            System.out.println("I am " + name + "\n" + SONG);
 
         }
 
