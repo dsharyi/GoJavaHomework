@@ -11,7 +11,7 @@ public class User {
     private static final double PERCENT_OF_COMMISION2 = 0.1;
 
     public static void main(String[] args) {
-        User user = new User("Dima", 1500, 11, "Luxoft", 1000, "USD");
+        User user = new User("Dima", 0, 11, "Luxoft", 0, "USD");
         user.paySalary();
         user.withdraw(200);
         user.companyNameLenght();
@@ -78,28 +78,33 @@ public class User {
         this.currency = currency;
     }
 
-    void paySalary() {
+    public void paySalary() {
         balance = salary + balance;
         System.out.println("Сумма баланса после зачисления заработной платы = " + balance);
 
     }
 
-    void withdraw(int summ) {
-        if (summ < 1000) {
+    public void withdraw(int summ) {
+
+        if (balance <= 0) {
+            System.out.println("Снятие денег запрещено.Недостаточно средств на счету!");
+        } else if (summ < 1000) {
             balance = (int) (balance - (summ + (summ * PERCENT_OF_COMMISION1)));
         } else {
             balance = (int) (balance - (summ + (summ * PERCENT_OF_COMMISION2)));
         }
         System.out.println("Сумма баланса после снятия денег = " + balance);
+
+
     }
 
-    void companyNameLenght() {
+    public void companyNameLenght() {
         int lengthOfNameCompany = companyName.length();
         System.out.println("Длина имени компании = " + lengthOfNameCompany);
 
     }
 
-    void monthIncreaser(int addMonth) {
+    public void monthIncreaser(int addMonth) {
         monthsOfEmployment = monthsOfEmployment + addMonth;
         System.out.println("Количество месяцев рабочей занятости после прибавления нескольких месяцев = " + monthsOfEmployment);
     }

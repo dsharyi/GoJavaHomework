@@ -30,7 +30,6 @@ public class Bird {
     }
 
 
-
     public void sing() {
         if (name == null) {
             System.out.println(SONG);
