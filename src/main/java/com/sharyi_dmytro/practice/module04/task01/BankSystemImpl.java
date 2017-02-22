@@ -5,12 +5,10 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void withdrawOfUser(User user, int amount) {
         if (user.getBank().getLimitOfWithdrawal() >= amount) {
-            while (user.getBalance() > 0) {
 
-                user.setBalance(user.getBalance() - amount);
-                System.out.println("Клиент снял " + amount + " Остаток на счету = " + user.getBalance());
-                break;
-            }
+
+            user.setBalance(user.getBalance() - amount);
+            System.out.println("Клиент снял " + amount + " Остаток на счету = " + user.getBalance());
 
 
         } else {

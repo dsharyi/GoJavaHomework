@@ -6,61 +6,71 @@ public class USBank extends Bank {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
-    @Override
+    public static final int LIMITOFWITHDRAWAL1 = 1000;
+    public static final int LIMITOFWITHDRAWAL2 = 1200;
+    public static final int MONTHLYRATE1 = 1;
+    public static final int MONTHLYRATE2 = 2;
+    public static final int LIMITOFFUNDING = 10000;
+    public static final int COMMISION1 = 5;
+    public static final int COMMISION2 = 6;
+    public static final int COMMISION3 = 7;
+    public static final int COMMISION4 = 8;
+
+
     public int getLimitOfWithdrawal() {
         int limitOfWithdrawal = 0;
         if (getCurrency().equals(Currency.USD)) {
 
-            limitOfWithdrawal = 1000;
+            limitOfWithdrawal = LIMITOFWITHDRAWAL1;
         } else if (getCurrency().equals(Currency.EUR)) {
-            limitOfWithdrawal = 1200;
+            limitOfWithdrawal = LIMITOFWITHDRAWAL2;
         }
         return limitOfWithdrawal;
 
     }
 
-    @Override
+
     public int getLimitOfFunding() {
         int limitOfFunding = 0;
         if (getCurrency().equals(Currency.USD)) {
 
             limitOfFunding = Integer.MAX_VALUE;
         } else if (getCurrency().equals(Currency.EUR)) {
-            limitOfFunding = 10000;
+            limitOfFunding = LIMITOFFUNDING;
         }
         return limitOfFunding;
 
     }
 
-    @Override
+
     public int getMonthlyRate() {
         int monthlyRate = 0;
         if (getCurrency().equals(Currency.USD)) {
 
-            monthlyRate = 1;
+            monthlyRate = MONTHLYRATE1;
         } else if (getCurrency().equals(Currency.EUR)) {
-            monthlyRate = 2;
+            monthlyRate = MONTHLYRATE2;
         }
         return monthlyRate;
 
     }
 
-    @Override
+
     public int getCommission(int summ) {
         int commision = 0;
         if (getCurrency().equals(Currency.USD) && summ < 1000) {
 
-            commision = 5;
+            commision = COMMISION1;
         }
         if (getCurrency().equals(Currency.USD) && summ > 1000) {
 
-            commision = 7;
+            commision = COMMISION3;
         }
 
         if (getCurrency().equals(Currency.EUR) && summ < 1000) {
-            commision = 6;
+            commision = COMMISION2;
         } else if (getCurrency().equals(Currency.EUR) && summ > 1000) {
-            commision = 8;
+            commision = COMMISION4;
         }
         return commision;
     }

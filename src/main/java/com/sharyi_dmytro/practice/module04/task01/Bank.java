@@ -15,7 +15,7 @@ public abstract class Bank {
     public abstract int getMonthlyRate();
     public abstract int getCommission(int summ);
     public double moneyPaidMonthlyForSalary(){
-        double moneyPaidMonthlyForSalary = new User().getSalary();
+        double moneyPaidMonthlyForSalary = getNumberOfEmployees()*getAvrSalaryOfEmployee();
         return moneyPaidMonthlyForSalary;
     }
 
