@@ -4,11 +4,13 @@ package com.sharyi_dmytro.practice.module04.task01;
 public class BankSystemImpl implements BankSystem {
     @Override
     public void withdrawOfUser(User user, int amount) {
-        if (user.getBank().getLimitOfWithdrawal() >= amount) {
+        if (user.getBank().getLimitOfWithdrawal() >= amount){
 
 
-            user.setBalance(user.getBalance() - amount);
-            System.out.println("Клиент снял " + amount + " Остаток на счету = " + user.getBalance());
+            user.setBalance(user.getBalance() - amount- user.getBank().getCommission(amount));
+
+
+            System.out.println("Клиент снял " + amount + " Комиссия составляет: "+ user.getBank().getCommission(amount)+ " Остаток на счету = " + user.getBalance());
 
 
         } else {
