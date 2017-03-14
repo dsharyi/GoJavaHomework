@@ -1,9 +1,9 @@
-package com.sharyi_dmytro.practice.module05.task01;
+package com.sharyi_dmytro.practice.module05.task01.dao;
 
 
-import com.sharyi_dmytro.practice.module04.practice.Animal;
+import com.sharyi_dmytro.practice.module05.task01.Room;
+import com.sharyi_dmytro.practice.module05.task01.dao.RoomDAO;
 
-import java.util.Arrays;
 import java.util.Date;
 
 public class RoomDAOUse implements RoomDAO {
@@ -77,5 +77,9 @@ public class RoomDAOUse implements RoomDAO {
 
 
         return null;
+    }
+
+    public Room[] getAll() {
+        return roomDB;
     }
 }
