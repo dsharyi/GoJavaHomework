@@ -1,13 +1,12 @@
-package com.sharyi_dmytro.practice.module05.task01.dao;
+package com.sharyi_dmytro.practice.module05.task05;
 
 
-import com.sharyi_dmytro.practice.module05.task01.Room;
-import com.sharyi_dmytro.practice.module05.task01.dao.RoomDAO;
+import com.sharyi_dmytro.practice.module05.task01_02.Room;
 
 import java.util.Date;
 
 public class RoomDAOUse implements RoomDAO {
-    Room[] roomDB = new Room[10];
+    private Room[] roomDB = new Room[10];
 
 
     public Room save(Room room) {
@@ -15,7 +14,7 @@ public class RoomDAOUse implements RoomDAO {
         int count = getRoomsCount(roomDB);
 
         roomDB[count] = room;
-        System.out.println("Была сохранена комната "+ room);
+        System.out.println("Была сохранена комната " + room);
 
         return room;
     }
@@ -40,7 +39,6 @@ public class RoomDAOUse implements RoomDAO {
     }*/
 
 
-
     public boolean delete(Room room) {
         for (int i = 0; i < roomDB.length; i++) {
             Room roomInDb = roomDB[i];
@@ -52,24 +50,24 @@ public class RoomDAOUse implements RoomDAO {
                 roomDB[roomDB.length - 1] = null;
             }
         }
-        System.out.println("Была удалена комната "+room);
+        System.out.println("Была удалена комната " + room);
         return true;
 
     }
 
 
     public Room update(Room room) {
-        room.setPrice(room.getPrice()+500);
+        room.setPrice(room.getPrice() + 500);
         room.setDateAvailableFrom(new Date());
-        System.out.println("Параметры комнаты изменены.Новая цена = "+room.getPrice()+" Доступна с "+ room.getDateAvailableFrom());
+        System.out.println("Параметры комнаты изменены.Новая цена = " + room.getPrice() + " Доступна с " + room.getDateAvailableFrom());
 
         return room;
     }
 
     public Room findById(long id) {
         for (Room room : roomDB) {
-            if (room!=null && room.getId() == id ){
-                System.out.println("Комната,которую Вы искали по id="+id +":"+ room);
+            if (room != null && room.getId() == id) {
+                System.out.println("Комната,которую Вы искали по id=" + id + ":" + room);
                 return room;
 
             }
@@ -78,8 +76,6 @@ public class RoomDAOUse implements RoomDAO {
 
         return null;
     }
-
-    public Room[] getAll() {
-        return roomDB;
-    }
 }
+
+

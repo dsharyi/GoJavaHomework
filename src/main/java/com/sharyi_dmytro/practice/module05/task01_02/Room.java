@@ -1,7 +1,6 @@
-package com.sharyi_dmytro.practice.module05.task01;
+package com.sharyi_dmytro.practice.module05.task01_02;
 
 
-import java.util.Arrays;
 import java.util.Date;
 
 public class Room {

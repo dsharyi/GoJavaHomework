@@ -1,26 +1,25 @@
-package com.sharyi_dmytro.practice.module05.task01.api;
+package com.sharyi_dmytro.practice.module05.task04;
 
-import com.sharyi_dmytro.practice.module05.task01.Room;
 
-import java.util.Arrays;
+import com.sharyi_dmytro.practice.module05.task01_02.Room;
+import com.sharyi_dmytro.practice.module05.task03.API;
+
 import java.util.Date;
 
+public class TripAdvisorAPI implements API {
 
-public class BookingComAPI implements API {
+    Room[] rooms = new Room[5];
 
+    public TripAdvisorAPI() {
 
-    private Room[] rooms = new Room[5];
-
-    public BookingComAPI() {
         for (int i = 0; i < rooms.length; i++) {
-            rooms[i] = new Room(i, 100 * i, 1 + i, new Date(), "Hyatt", "Berlin");
+            rooms[i] = new Room(i + 1, 150 * i, 2 + i, new Date(), "Hilton", "London");
 
         }
     }
 
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-
         Room[] newRooms = new Room[rooms.length];
         int count = 0;
 
@@ -47,3 +46,4 @@ public class BookingComAPI implements API {
         this.rooms = rooms;
     }
 }
+
