@@ -16,9 +16,9 @@ public class Main {
         RoomDAOUse roomDAOUse = new RoomDAOUse();
         roomDAOUse.save(new Room(12,200,2,new Date(),"Ukraine","Dnipro"));
         controller.requestRooms(600, 4, "London", "Hilton");
-        controller.requestRooms(200, 2, "London", "Hilton");
-        controller.requestRooms(7800, 2, "Berlin", "Hyatt");
-        controller.check(new BookingComAPI(), new TripAdvisorAPI());
+        controller.requestRooms(2200, 5, "Berlin", "Hyatt");
+        //controller.requestRooms(7800, 2, "Berlin", "Hyatt");
+        //controller.check(new BookingComAPI(), new TripAdvisorAPI());
 
 
 

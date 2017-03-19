@@ -3,6 +3,7 @@ package com.sharyi_dmytro.practice.module05.task05;
 
 import com.sharyi_dmytro.practice.module05.task01_02.Room;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class RoomDAOUse implements RoomDAO {
@@ -32,11 +33,11 @@ public class RoomDAOUse implements RoomDAO {
         return count;
     }
 
-    /*public static Room[] addNewElement(Room[] roomDB, Room newRoom) {
+    public static Room[] addNewElement(Room[] roomDB, Room newRoom) {
         Room[] newRoomDB = Arrays.copyOf(roomDB, roomDB.length+1);
         newRoomDB [newRoomDB.length-1] = newRoom;
         return newRoomDB;
-    }*/
+    }
 
 
     public boolean delete(Room room) {
