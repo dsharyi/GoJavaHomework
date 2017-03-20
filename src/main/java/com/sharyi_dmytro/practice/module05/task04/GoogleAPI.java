@@ -2,9 +2,7 @@ package com.sharyi_dmytro.practice.module05.task04;
 
 import com.sharyi_dmytro.practice.module05.task01_02.Room;
 import com.sharyi_dmytro.practice.module05.task03.API;
-import com.sharyi_dmytro.practice.module05.task05.RoomDAOUse;
 
-import java.util.Arrays;
 import java.util.Date;
 
 import static com.sharyi_dmytro.practice.module05.task05.RoomDAOUse.addNewElement;
@@ -19,7 +17,7 @@ public class GoogleAPI implements API {
 
         rooms[0] = new Room(6,1200,1,new Date(),"Peremoga","Lviv");
         rooms[1] = new Room(7,400,2,new Date(),"Ukraine","Dnipro");
-        rooms[2] = new Room(8,9200,4,new Date(),"Hyatt","London");
+        rooms[2] = new Room(8,600,4,new Date(),"Hilton","London");
         rooms[3] = new Room(9,5200,5,new Date(),"Hilton","Berlin");
         rooms[4] = new Room(10,1300,8,new Date(),"Hilton","Paris");
 
@@ -35,6 +33,7 @@ public class GoogleAPI implements API {
         for (int i = 0; i < rooms.length; i++) {
             if (price == rooms[i].getPrice() && persons == rooms[i].getPersons() && city.equals(rooms[i].getCityName()) && hotel.equals(rooms[i].getHotelName())) {
                 newRooms = addNewElement(newRooms, rooms[i]);
+
 
 
 

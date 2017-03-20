@@ -2,9 +2,7 @@ package com.sharyi_dmytro.practice.module05.task04;
 
 import com.sharyi_dmytro.practice.module05.task01_02.Room;
 import com.sharyi_dmytro.practice.module05.task03.API;
-import com.sharyi_dmytro.practice.module05.task05.RoomDAOUse;
 
-import java.util.Arrays;
 import java.util.Date;
 
 import static com.sharyi_dmytro.practice.module05.task05.RoomDAOUse.addNewElement;

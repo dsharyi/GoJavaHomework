@@ -3,16 +3,14 @@ package com.sharyi_dmytro.practice.module05.task04;
 
 import com.sharyi_dmytro.practice.module05.task01_02.Room;
 import com.sharyi_dmytro.practice.module05.task03.API;
-import com.sharyi_dmytro.practice.module05.task05.RoomDAOUse;
 
-import java.util.Arrays;
 import java.util.Date;
 
 import static com.sharyi_dmytro.practice.module05.task05.RoomDAOUse.addNewElement;
 
 public class TripAdvisorAPI implements API {
 
-    Room[] rooms = new Room[5];
+    private Room[] rooms = new Room[5];
 
 
     public TripAdvisorAPI() {
@@ -33,9 +31,11 @@ public class TripAdvisorAPI implements API {
 
 
 
+
         for (int i = 0; i < rooms.length; i++) {
             if (price == rooms[i].getPrice() && persons == rooms[i].getPersons() && city.equals(rooms[i].getCityName()) && hotel.equals(rooms[i].getHotelName())) {
                 newRooms = addNewElement(newRooms, rooms[i]);
+
 
 
             }
