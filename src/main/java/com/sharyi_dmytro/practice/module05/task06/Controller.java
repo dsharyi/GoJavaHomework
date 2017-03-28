@@ -5,6 +5,7 @@ import com.sharyi_dmytro.practice.module05.task03.API;
 import com.sharyi_dmytro.practice.module05.task04.BookingComAPI;
 import com.sharyi_dmytro.practice.module05.task04.GoogleAPI;
 import com.sharyi_dmytro.practice.module05.task04.TripAdvisorAPI;
+import com.sun.deploy.util.ArrayUtil;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;
@@ -24,33 +25,36 @@ public class Controller {
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
 
-        Room[] bookingComAPIRequestRooms = new Room[0];
-        Room[] googleAPIRequestRooms = new Room[0];
-        Room[] tripAdvisorAPIRequestRooms = new Room[0];
+        Room[] apiRequestRooms = new Room[0];
         Room[] allRequestRooms = new Room[0];
 
 
         for (int i = 0; i < apis.length; i++) {
-            switch (i) {
-                case 0:
-                    bookingComAPIRequestRooms = apis[0].findRooms(price, persons, city, hotel);
-                    allRequestRooms = ArrayUtils.addAll(allRequestRooms,bookingComAPIRequestRooms);
-                    System.out.println("BookingComAPI find such rooms: " + Arrays.toString(bookingComAPIRequestRooms));
-                    break;
+            apiRequestRooms = apis[i].findRooms(price, persons, city, hotel);
+            allRequestRooms = ArrayUtils.addAll(allRequestRooms, apiRequestRooms);
+            System.out.println("APIRequestRooms find such rooms: " + Arrays.toString(apiRequestRooms));
 
-                case 1:
-                    googleAPIRequestRooms = apis[1].findRooms(price, persons, city, hotel);
-                    allRequestRooms = ArrayUtils.addAll(allRequestRooms,googleAPIRequestRooms);
-                    System.out.println("GoogleAPI find such rooms: " + Arrays.toString(googleAPIRequestRooms));
-                    break;
 
-                case 2:
-                    tripAdvisorAPIRequestRooms = apis[2].findRooms(price, persons, city, hotel);
-                    allRequestRooms = ArrayUtils.addAll(allRequestRooms,tripAdvisorAPIRequestRooms);
-                    System.out.println("TripAdvisorAPI find such rooms: " + Arrays.toString(tripAdvisorAPIRequestRooms));
-                    break;
-
-            }
+            //switch (i) {
+            //    case 0:
+            //        apiRequestRooms = apis[0].findRooms(price, persons, city, hotel);
+            //        allRequestRooms = ArrayUtils.addAll(allRequestRooms,apiRequestRooms);
+            //        System.out.println("BookingComAPI find such rooms: " + Arrays.toString(apiRequestRooms));
+            //        break;
+//
+            //    case 1:
+            //        googleAPIRequestRooms = apis[1].findRooms(price, persons, city, hotel);
+            //        allRequestRooms = ArrayUtils.addAll(allRequestRooms,googleAPIRequestRooms);
+            //        System.out.println("GoogleAPI find such rooms: " + Arrays.toString(googleAPIRequestRooms));
+            //        break;
+//
+            //    case 2:
+            //        tripAdvisorAPIRequestRooms = apis[2].findRooms(price, persons, city, hotel);
+            //        allRequestRooms = ArrayUtils.addAll(allRequestRooms,tripAdvisorAPIRequestRooms);
+            //        System.out.println("TripAdvisorAPI find such rooms: " + Arrays.toString(tripAdvisorAPIRequestRooms));
+            //        break;
+//
+            //}
 
 
         }
@@ -61,14 +65,13 @@ public class Controller {
     }
 
 
-
     public Room[] check(API api1, API api2) {
         Room[] checkRooms = new Room[0];
-        int count=0;
+        int count = 0;
         for (int i = 0; i < api1.getRooms().length; i++) {
             for (int j = 0; j < api2.getRooms().length; j++) {
                 if (api1.getRooms()[i].equals(api2.getRooms()[j])) {
-                    checkRooms= addNewElement(checkRooms, api1.getRooms()[i]);
+                    checkRooms = addNewElement(checkRooms, api1.getRooms()[i]);
                     count++;
                 }
 
@@ -77,7 +80,7 @@ public class Controller {
         //System.out.println(Arrays.toString(api1.getRooms()));
         //System.out.println(Arrays.toString(api2.getRooms()));
 
-        System.out.println("The same rooms: "+Arrays.toString(checkRooms)+"Count of the same rooms= "+count);
+        System.out.println("The same rooms: " + Arrays.toString(checkRooms) + "Count of the same rooms= " + count);
 
 
         return checkRooms;
