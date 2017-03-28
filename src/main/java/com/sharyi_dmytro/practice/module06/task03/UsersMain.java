@@ -30,12 +30,11 @@ public class UsersMain {
         arrayPaySalaryToUsers[3] = new User(4, "Alex", "Dowson", 1500, 12000);
 
 
-        UserUtils userUtils = new UserUtils();
-        userUtils.uniqueUsers(arrayUsersForUniqueUsers);
-        userUtils.deleteEmptyUsers(arrayUsersForDelete);
-        userUtils.usersWithContitionalBalance(arrayUsersWithContitionalBalance, 12000);
-        userUtils.paySalaryToUsers(arrayPaySalaryToUsers);
-        userUtils.getUsersId(arrayPaySalaryToUsers);
+        UserUtils.uniqueUsers(arrayUsersForUniqueUsers);
+        UserUtils.deleteEmptyUsers(arrayUsersForDelete);
+        UserUtils.usersWithContitionalBalance(arrayUsersWithContitionalBalance, 12000);
+        UserUtils.paySalaryToUsers(arrayPaySalaryToUsers);
+        UserUtils.getUsersId(arrayPaySalaryToUsers);
     }
 
 
