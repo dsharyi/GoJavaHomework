@@ -1,9 +1,7 @@
 package com.sharyi_dmytro.practice.module07.task01;
 
-/**
- * Created by nonal on 27.03.2017.
- */
-public class User {
+
+public class User{
     private long id;
     private String firstName;
     private String lastName;
@@ -69,18 +67,12 @@ public class User {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
-
-        return city != null ? city.equals(user.city) : user.city == null;
-    }
 
     @Override
     public int hashCode() {
         return city != null ? city.hashCode() : 0;
     }
+
+
 }

@@ -34,30 +34,21 @@ public class UseMain {
         orders[9] = new Order(10, 1000, Order.Currency.UAH, "Ball", "Roz", users[9]);
 
 
-
-
-
-
         List<User> userList = new ArrayList<>(Arrays.asList(users));
         List<Order> orderList = new ArrayList<>(Arrays.asList(orders));
         //Set<Order> setOrders = new HashSet<>(Arrays.asList(orders));
         //System.out.println("Set = "+setOrders.toString()+"size = "+setOrders.size());
         UseSort.sortPriceDecrease(orderList);
-        System.out.println("Сортировка товаров по спаданию цены: "+orderList.toString());
+        System.out.println("Сортировка товаров по спаданию цены: " + orderList.toString());
         UseSort.sortPriceAndCityIncrease(orderList);
-        System.out.println("Сортировка товаров по возрастанию по цене и городу: "+orderList.toString());
+        System.out.println("Сортировка товаров по возрастанию по цене и городу: " + orderList.toString());
         UseSort.sortItemNameIdOrderAndCity(orderList);
-        System.out.println("Сортировка товаров по названию товара, ID и городу: "+orderList.toString());
-        System.out.println("Список после удаления дубликатов: "+ OperationsWithList.removeDuplicate(orderList));
+        System.out.println("Сортировка товаров по названию товара, ID и городу: " + orderList.toString());
+        System.out.println("Список после удаления дубликатов: " + OperationsWithList.removeDuplicate(orderList));
         OperationsWithList.removePriceLess1500(orderList);
-        System.out.println("Список заказов с ценой меньше 1500: "+ orderList.toString());
+        System.out.println("Список заказов с ценой меньше 1500: " + orderList.toString());
         OperationsWithList.listsWith2Currencies(orderList);
         //System.out.println("Список с уникальными городами: "+OperationsWithList.listsWithUniqueCities(userList));
-
-
-
-
-
 
 
     }

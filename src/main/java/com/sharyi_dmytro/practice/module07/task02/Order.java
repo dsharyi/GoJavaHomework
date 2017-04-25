@@ -4,13 +4,18 @@ package com.sharyi_dmytro.practice.module07.task02;
 import com.sharyi_dmytro.practice.module07.task01.User;
 
 
-public class Order{
+public class Order implements Comparable<Order>{
     private long id;
     private int price;
     private Currency currency;
     private String itemName;
     private String shopIdentificator;
     private User user;
+
+    @Override
+    public int compareTo(Order o) {
+        return Integer.valueOf(o.price).compareTo(this.price);
+    }
 
 
     public enum Currency {
