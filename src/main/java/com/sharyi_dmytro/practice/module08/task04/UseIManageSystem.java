@@ -8,6 +8,7 @@ import java.util.*;
 
 public final class UseIManageSystem implements IManageSystem<Food> {
     private Map<Food, Double> database = new HashMap<>();
+    public static final double PRICE = 0.0;
 
 
     public Food save(Food food, double price) {
@@ -18,7 +19,7 @@ public final class UseIManageSystem implements IManageSystem<Food> {
     public Food save(Food food) {
         if (database.containsKey(food)) {
             return food;
-        } else database.put(food, 0.0);
+        } else database.put(food, PRICE);
         return food;
     }
 

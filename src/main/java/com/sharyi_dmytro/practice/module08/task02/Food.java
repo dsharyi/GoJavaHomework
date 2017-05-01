@@ -61,7 +61,7 @@ public class Food{
     }
 
     public Food(String name, Country country, int expiration) {
-        id = IdGenerator.idGenerator(name);
+        id = IdGenerator.idGenerator(name,country,expiration);
         this.name = name;
         this.country = country;
         this.expiration = expiration;
